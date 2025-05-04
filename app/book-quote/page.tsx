@@ -107,7 +107,7 @@ export default function BookQuotePage() {
   const updateFormData = (field: string, value: any) => {
     setFormData({ ...formData, [field]: value });
   };
-
+  
   const toggleTechnology = (tech: string) => {
     if (formData.technology.includes(tech)) {
       updateFormData(
