@@ -104,14 +104,15 @@ export default function BookQuotePage() {
     }
   };
 
-  const updateFormData = (field: string, value: string) => {
-  setFormData({ ...formData, [field]: value });
-};
-  const toggleTechnology = (tech) => {
+  const updateFormData = (field: string, value: any) => {
+    setFormData({ ...formData, [field]: value });
+  };
+
+  const toggleTechnology = (tech: string) => {
     if (formData.technology.includes(tech)) {
       updateFormData(
         "technology",
-        formData.technology.filter((t) => t !== tech)
+        formData.technology.filter((t: string) => t !== tech)
       );
     } else {
       updateFormData("technology", [...formData.technology, tech]);
