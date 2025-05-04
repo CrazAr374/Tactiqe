@@ -36,7 +36,7 @@ export default function BookQuotePage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<FormData>({
     projectType: "",
-    technology: [],
+    technology: [] as string[],
     budget: 2000,
     timeline: "",
     name: "",
@@ -115,11 +115,11 @@ export default function BookQuotePage() {
     }
   };
 
-  const updateFormData = (field: string, value: any) => {
+  const updateFormData = (field: keyof FormData, value: any): void => {
     setFormData({ ...formData, [field]: value });
   };
   
-  const toggleTechnology = (tech: string) => {
+  const toggleTechnology = (tech: string): void => {
     if (formData.technology.includes(tech)) {
       updateFormData(
         "technology",
