@@ -21,9 +21,20 @@ const steps = [
   { id: "contact", title: "Contact Details" },
 ];
 
+interface FormData {
+  projectType: string;
+  technology: string[];
+  budget: number;
+  timeline: string;
+  name: string;
+  email: string;
+  phone: string;
+  details: string;
+}
+
 export default function BookQuotePage() {
   const [currentStep, setCurrentStep] = useState(0);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     projectType: "",
     technology: [],
     budget: 2000,
